@@ -1,4 +1,4 @@
-# videocontrol by dbj.systems
+# videocontrol by dbj.systems (circa 2005)
 
 `DBJVIDEO` — an ATL-based ActiveX control (COM/OLE) by DBJSystems Ltd, wrapping
 DirectShow (`quartz`) for embedding video rendering in a webpage or any
