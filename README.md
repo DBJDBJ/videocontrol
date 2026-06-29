@@ -1,4 +1,4 @@
-# videocontrol
+# videocontrol by dbj.systems
 
 `DBJVIDEO` — an ATL-based ActiveX control (COM/OLE) by DBJSystems Ltd, wrapping
 DirectShow (`quartz`) for embedding video rendering in a webpage or any
@@ -29,3 +29,8 @@ available, and build the `videocontrol` ATL DLL project.
 
 The built DLL is a COM in-process server and must be registered with
 `regsvr32 videocontrol.dll` before use.
+
+Authors: 
+
+Mahmudul Hoque  `mhoque@gmail.com`
+Dusan Jovanovic `dbjdbj@gmail.com` 
