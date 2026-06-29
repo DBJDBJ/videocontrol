@@ -1,0 +1,15 @@
+Debug/
+Release/
+*.obj
+*.pdb
+*.dll
+*.exp
+*.lib
+*.res
+*.idb
+*.trg
+*.suo
+*.opt
+*.plg
+*.ncb
+*.aps

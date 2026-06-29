@@ -1,0 +1,1062 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8867.0 (291b2d24).
+//
+// x:\com\dbj\videocontrol\debug\quartz.tlh
+//
+// C++ source equivalent of Win32 type library F:\WINNT\system32\quartz.dll
+// compiler-generated file created 08/22/00 at 18:09:26 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace QuartzTypeLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("56a868b9-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IAMCollection;
+struct __declspec(uuid("56a868b1-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IMediaControl;
+struct __declspec(uuid("56a868b6-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IMediaEvent;
+struct __declspec(uuid("56a868c0-0ad4-11ce-b03a-0020af0ba770"))
+/* interface */ IMediaEventEx;
+struct __declspec(uuid("56a868b2-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IMediaPosition;
+struct __declspec(uuid("56a868b3-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IBasicAudio;
+struct __declspec(uuid("56a868b4-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IVideoWindow;
+struct __declspec(uuid("56a868b5-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IBasicVideo;
+struct __declspec(uuid("329bb360-f6ea-11d1-9038-00a0c9697298"))
+/* interface */ IBasicVideo2;
+struct __declspec(uuid("56a868b8-0ad4-11ce-b03a-0020af0ba770"))
+/* interface */ IDeferredCommand;
+struct __declspec(uuid("56a868b7-0ad4-11ce-b03a-0020af0ba770"))
+/* interface */ IQueueCommand;
+struct /* coclass */ FilgraphManager;
+struct __declspec(uuid("56a868ba-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IFilterInfo;
+struct __declspec(uuid("56a868bb-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IRegFilterInfo;
+struct __declspec(uuid("56a868bc-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IMediaTypeInfo;
+struct __declspec(uuid("56a868bd-0ad4-11ce-b03a-0020af0ba770"))
+/* dual interface */ IPinInfo;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IAMCollection, __uuidof(IAMCollection));
+_COM_SMARTPTR_TYPEDEF(IMediaControl, __uuidof(IMediaControl));
+_COM_SMARTPTR_TYPEDEF(IMediaEvent, __uuidof(IMediaEvent));
+_COM_SMARTPTR_TYPEDEF(IMediaEventEx, __uuidof(IMediaEventEx));
+_COM_SMARTPTR_TYPEDEF(IMediaPosition, __uuidof(IMediaPosition));
+_COM_SMARTPTR_TYPEDEF(IBasicAudio, __uuidof(IBasicAudio));
+_COM_SMARTPTR_TYPEDEF(IVideoWindow, __uuidof(IVideoWindow));
+_COM_SMARTPTR_TYPEDEF(IBasicVideo, __uuidof(IBasicVideo));
+_COM_SMARTPTR_TYPEDEF(IBasicVideo2, __uuidof(IBasicVideo2));
+_COM_SMARTPTR_TYPEDEF(IDeferredCommand, __uuidof(IDeferredCommand));
+_COM_SMARTPTR_TYPEDEF(IQueueCommand, __uuidof(IQueueCommand));
+_COM_SMARTPTR_TYPEDEF(IFilterInfo, __uuidof(IFilterInfo));
+_COM_SMARTPTR_TYPEDEF(IRegFilterInfo, __uuidof(IRegFilterInfo));
+_COM_SMARTPTR_TYPEDEF(IMediaTypeInfo, __uuidof(IMediaTypeInfo));
+_COM_SMARTPTR_TYPEDEF(IPinInfo, __uuidof(IPinInfo));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("56a868b9-0ad4-11ce-b03a-0020af0ba770"))
+IAMCollection : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    HRESULT Item (
+        long lItem,
+        IUnknown * * ppUnk );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Count (
+        long * plCount ) = 0;
+    virtual HRESULT __stdcall raw_Item (
+        long lItem,
+        IUnknown * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * ppUnk ) = 0;
+};
+
+struct __declspec(uuid("56a868b1-0ad4-11ce-b03a-0020af0ba770"))
+IMediaControl : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetFilterCollection))
+    IDispatchPtr FilterCollection;
+    __declspec(property(get=GetRegFilterCollection))
+    IDispatchPtr RegFilterCollection;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Run ( );
+    HRESULT Pause ( );
+    HRESULT Stop ( );
+    HRESULT GetState (
+        long msTimeout,
+        long * pfs );
+    HRESULT RenderFile (
+        _bstr_t strFilename );
+    HRESULT AddSourceFilter (
+        _bstr_t strFilename,
+        IDispatch * * ppUnk );
+    IDispatchPtr GetFilterCollection ( );
+    IDispatchPtr GetRegFilterCollection ( );
+    HRESULT StopWhenReady ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Run ( ) = 0;
+    virtual HRESULT __stdcall raw_Pause ( ) = 0;
+    virtual HRESULT __stdcall raw_Stop ( ) = 0;
+    virtual HRESULT __stdcall raw_GetState (
+        long msTimeout,
+        long * pfs ) = 0;
+    virtual HRESULT __stdcall raw_RenderFile (
+        BSTR strFilename ) = 0;
+    virtual HRESULT __stdcall raw_AddSourceFilter (
+        BSTR strFilename,
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_FilterCollection (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_RegFilterCollection (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall raw_StopWhenReady ( ) = 0;
+};
+
+struct __declspec(uuid("56a868b6-0ad4-11ce-b03a-0020af0ba770"))
+IMediaEvent : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT GetEventHandle (
+        long * hEvent );
+    HRESULT GetEvent (
+        long * lEventCode,
+        long * lParam1,
+        long * lParam2,
+        long msTimeout );
+    HRESULT WaitForCompletion (
+        long msTimeout,
+        long * pEvCode );
+    HRESULT CancelDefaultHandling (
+        long lEvCode );
+    HRESULT RestoreDefaultHandling (
+        long lEvCode );
+    HRESULT FreeEventParams (
+        long lEvCode,
+        long lParam1,
+        long lParam2 );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetEventHandle (
+        long * hEvent ) = 0;
+    virtual HRESULT __stdcall raw_GetEvent (
+        long * lEventCode,
+        long * lParam1,
+        long * lParam2,
+        long msTimeout ) = 0;
+    virtual HRESULT __stdcall raw_WaitForCompletion (
+        long msTimeout,
+        long * pEvCode ) = 0;
+    virtual HRESULT __stdcall raw_CancelDefaultHandling (
+        long lEvCode ) = 0;
+    virtual HRESULT __stdcall raw_RestoreDefaultHandling (
+        long lEvCode ) = 0;
+    virtual HRESULT __stdcall raw_FreeEventParams (
+        long lEvCode,
+        long lParam1,
+        long lParam2 ) = 0;
+};
+
+struct __declspec(uuid("56a868c0-0ad4-11ce-b03a-0020af0ba770"))
+IMediaEventEx : IMediaEvent
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT SetNotifyWindow (
+        long hwnd,
+        long lMsg,
+        long lInstanceData );
+    HRESULT SetNotifyFlags (
+        long lNoNotifyFlags );
+    HRESULT GetNotifyFlags (
+        long * lplNoNotifyFlags );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_SetNotifyWindow (
+        long hwnd,
+        long lMsg,
+        long lInstanceData ) = 0;
+    virtual HRESULT __stdcall raw_SetNotifyFlags (
+        long lNoNotifyFlags ) = 0;
+    virtual HRESULT __stdcall raw_GetNotifyFlags (
+        long * lplNoNotifyFlags ) = 0;
+};
+
+struct __declspec(uuid("56a868b2-0ad4-11ce-b03a-0020af0ba770"))
+IMediaPosition : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetDuration))
+    double Duration;
+    __declspec(property(get=GetCurrentPosition,put=PutCurrentPosition))
+    double CurrentPosition;
+    __declspec(property(get=GetStopTime,put=PutStopTime))
+    double StopTime;
+    __declspec(property(get=GetPrerollTime,put=PutPrerollTime))
+    double PrerollTime;
+    __declspec(property(get=GetRate,put=PutRate))
+    double Rate;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    double GetDuration ( );
+    void PutCurrentPosition (
+        double pllTime );
+    double GetCurrentPosition ( );
+    double GetStopTime ( );
+    void PutStopTime (
+        double pllTime );
+    double GetPrerollTime ( );
+    void PutPrerollTime (
+        double pllTime );
+    void PutRate (
+        double pdRate );
+    double GetRate ( );
+    long CanSeekForward ( );
+    long CanSeekBackward ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Duration (
+        double * plength ) = 0;
+    virtual HRESULT __stdcall put_CurrentPosition (
+        double pllTime ) = 0;
+    virtual HRESULT __stdcall get_CurrentPosition (
+        double * pllTime ) = 0;
+    virtual HRESULT __stdcall get_StopTime (
+        double * pllTime ) = 0;
+    virtual HRESULT __stdcall put_StopTime (
+        double pllTime ) = 0;
+    virtual HRESULT __stdcall get_PrerollTime (
+        double * pllTime ) = 0;
+    virtual HRESULT __stdcall put_PrerollTime (
+        double pllTime ) = 0;
+    virtual HRESULT __stdcall put_Rate (
+        double pdRate ) = 0;
+    virtual HRESULT __stdcall get_Rate (
+        double * pdRate ) = 0;
+    virtual HRESULT __stdcall raw_CanSeekForward (
+        long * pCanSeekForward ) = 0;
+    virtual HRESULT __stdcall raw_CanSeekBackward (
+        long * pCanSeekBackward ) = 0;
+};
+
+struct __declspec(uuid("56a868b3-0ad4-11ce-b03a-0020af0ba770"))
+IBasicAudio : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetVolume,put=PutVolume))
+    long Volume;
+    __declspec(property(get=GetBalance,put=PutBalance))
+    long Balance;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    void PutVolume (
+        long plVolume );
+    long GetVolume ( );
+    void PutBalance (
+        long plBalance );
+    long GetBalance ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall put_Volume (
+        long plVolume ) = 0;
+    virtual HRESULT __stdcall get_Volume (
+        long * plVolume ) = 0;
+    virtual HRESULT __stdcall put_Balance (
+        long plBalance ) = 0;
+    virtual HRESULT __stdcall get_Balance (
+        long * plBalance ) = 0;
+};
+
+struct __declspec(uuid("56a868b4-0ad4-11ce-b03a-0020af0ba770"))
+IVideoWindow : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCaption,put=PutCaption))
+    _bstr_t Caption;
+    __declspec(property(get=GetWindowStyle,put=PutWindowStyle))
+    long WindowStyle;
+    __declspec(property(get=GetWindowStyleEx,put=PutWindowStyleEx))
+    long WindowStyleEx;
+    __declspec(property(get=GetAutoShow,put=PutAutoShow))
+    long AutoShow;
+    __declspec(property(get=GetWindowState,put=PutWindowState))
+    long WindowState;
+    __declspec(property(get=GetBackgroundPalette,put=PutBackgroundPalette))
+    long BackgroundPalette;
+    __declspec(property(get=GetVisible,put=PutVisible))
+    long Visible;
+    __declspec(property(get=GetLeft,put=PutLeft))
+    long Left;
+    __declspec(property(get=GetWidth,put=PutWidth))
+    long Width;
+    __declspec(property(get=GetTop,put=PutTop))
+    long Top;
+    __declspec(property(get=GetHeight,put=PutHeight))
+    long Height;
+    __declspec(property(get=GetOwner,put=PutOwner))
+    long Owner;
+    __declspec(property(get=GetMessageDrain,put=PutMessageDrain))
+    long MessageDrain;
+    __declspec(property(get=GetBorderColor,put=PutBorderColor))
+    long BorderColor;
+    __declspec(property(get=GetFullScreenMode,put=PutFullScreenMode))
+    long FullScreenMode;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    void PutCaption (
+        _bstr_t strCaption );
+    _bstr_t GetCaption ( );
+    void PutWindowStyle (
+        long WindowStyle );
+    long GetWindowStyle ( );
+    void PutWindowStyleEx (
+        long WindowStyleEx );
+    long GetWindowStyleEx ( );
+    void PutAutoShow (
+        long AutoShow );
+    long GetAutoShow ( );
+    void PutWindowState (
+        long WindowState );
+    long GetWindowState ( );
+    void PutBackgroundPalette (
+        long pBackgroundPalette );
+    long GetBackgroundPalette ( );
+    void PutVisible (
+        long pVisible );
+    long GetVisible ( );
+    void PutLeft (
+        long pLeft );
+    long GetLeft ( );
+    void PutWidth (
+        long pWidth );
+    long GetWidth ( );
+    void PutTop (
+        long pTop );
+    long GetTop ( );
+    void PutHeight (
+        long pHeight );
+    long GetHeight ( );
+    void PutOwner (
+        long Owner );
+    long GetOwner ( );
+    void PutMessageDrain (
+        long Drain );
+    long GetMessageDrain ( );
+    long GetBorderColor ( );
+    void PutBorderColor (
+        long Color );
+    long GetFullScreenMode ( );
+    void PutFullScreenMode (
+        long FullScreenMode );
+    HRESULT SetWindowForeground (
+        long Focus );
+    HRESULT NotifyOwnerMessage (
+        long hwnd,
+        long uMsg,
+        long wParam,
+        long lParam );
+    HRESULT SetWindowPosition (
+        long Left,
+        long Top,
+        long Width,
+        long Height );
+    HRESULT GetWindowPosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight );
+    HRESULT GetMinIdealImageSize (
+        long * pWidth,
+        long * pHeight );
+    HRESULT GetMaxIdealImageSize (
+        long * pWidth,
+        long * pHeight );
+    HRESULT GetRestorePosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight );
+    HRESULT HideCursor (
+        long HideCursor );
+    HRESULT IsCursorHidden (
+        long * CursorHidden );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall put_Caption (
+        BSTR strCaption ) = 0;
+    virtual HRESULT __stdcall get_Caption (
+        BSTR * strCaption ) = 0;
+    virtual HRESULT __stdcall put_WindowStyle (
+        long WindowStyle ) = 0;
+    virtual HRESULT __stdcall get_WindowStyle (
+        long * WindowStyle ) = 0;
+    virtual HRESULT __stdcall put_WindowStyleEx (
+        long WindowStyleEx ) = 0;
+    virtual HRESULT __stdcall get_WindowStyleEx (
+        long * WindowStyleEx ) = 0;
+    virtual HRESULT __stdcall put_AutoShow (
+        long AutoShow ) = 0;
+    virtual HRESULT __stdcall get_AutoShow (
+        long * AutoShow ) = 0;
+    virtual HRESULT __stdcall put_WindowState (
+        long WindowState ) = 0;
+    virtual HRESULT __stdcall get_WindowState (
+        long * WindowState ) = 0;
+    virtual HRESULT __stdcall put_BackgroundPalette (
+        long pBackgroundPalette ) = 0;
+    virtual HRESULT __stdcall get_BackgroundPalette (
+        long * pBackgroundPalette ) = 0;
+    virtual HRESULT __stdcall put_Visible (
+        long pVisible ) = 0;
+    virtual HRESULT __stdcall get_Visible (
+        long * pVisible ) = 0;
+    virtual HRESULT __stdcall put_Left (
+        long pLeft ) = 0;
+    virtual HRESULT __stdcall get_Left (
+        long * pLeft ) = 0;
+    virtual HRESULT __stdcall put_Width (
+        long pWidth ) = 0;
+    virtual HRESULT __stdcall get_Width (
+        long * pWidth ) = 0;
+    virtual HRESULT __stdcall put_Top (
+        long pTop ) = 0;
+    virtual HRESULT __stdcall get_Top (
+        long * pTop ) = 0;
+    virtual HRESULT __stdcall put_Height (
+        long pHeight ) = 0;
+    virtual HRESULT __stdcall get_Height (
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall put_Owner (
+        long Owner ) = 0;
+    virtual HRESULT __stdcall get_Owner (
+        long * Owner ) = 0;
+    virtual HRESULT __stdcall put_MessageDrain (
+        long Drain ) = 0;
+    virtual HRESULT __stdcall get_MessageDrain (
+        long * Drain ) = 0;
+    virtual HRESULT __stdcall get_BorderColor (
+        long * Color ) = 0;
+    virtual HRESULT __stdcall put_BorderColor (
+        long Color ) = 0;
+    virtual HRESULT __stdcall get_FullScreenMode (
+        long * FullScreenMode ) = 0;
+    virtual HRESULT __stdcall put_FullScreenMode (
+        long FullScreenMode ) = 0;
+    virtual HRESULT __stdcall raw_SetWindowForeground (
+        long Focus ) = 0;
+    virtual HRESULT __stdcall raw_NotifyOwnerMessage (
+        long hwnd,
+        long uMsg,
+        long wParam,
+        long lParam ) = 0;
+    virtual HRESULT __stdcall raw_SetWindowPosition (
+        long Left,
+        long Top,
+        long Width,
+        long Height ) = 0;
+    virtual HRESULT __stdcall raw_GetWindowPosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_GetMinIdealImageSize (
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_GetMaxIdealImageSize (
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_GetRestorePosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_HideCursor (
+        long HideCursor ) = 0;
+    virtual HRESULT __stdcall raw_IsCursorHidden (
+        long * CursorHidden ) = 0;
+};
+
+struct __declspec(uuid("56a868b5-0ad4-11ce-b03a-0020af0ba770"))
+IBasicVideo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetAvgTimePerFrame))
+    double AvgTimePerFrame;
+    __declspec(property(get=GetBitRate))
+    long BitRate;
+    __declspec(property(get=GetBitErrorRate))
+    long BitErrorRate;
+    __declspec(property(get=GetVideoWidth))
+    long VideoWidth;
+    __declspec(property(get=GetVideoHeight))
+    long VideoHeight;
+    __declspec(property(get=GetSourceLeft,put=PutSourceLeft))
+    long SourceLeft;
+    __declspec(property(get=GetSourceWidth,put=PutSourceWidth))
+    long SourceWidth;
+    __declspec(property(get=GetSourceTop,put=PutSourceTop))
+    long SourceTop;
+    __declspec(property(get=GetSourceHeight,put=PutSourceHeight))
+    long SourceHeight;
+    __declspec(property(get=GetDestinationLeft,put=PutDestinationLeft))
+    long DestinationLeft;
+    __declspec(property(get=GetDestinationWidth,put=PutDestinationWidth))
+    long DestinationWidth;
+    __declspec(property(get=GetDestinationTop,put=PutDestinationTop))
+    long DestinationTop;
+    __declspec(property(get=GetDestinationHeight,put=PutDestinationHeight))
+    long DestinationHeight;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    double GetAvgTimePerFrame ( );
+    long GetBitRate ( );
+    long GetBitErrorRate ( );
+    long GetVideoWidth ( );
+    long GetVideoHeight ( );
+    void PutSourceLeft (
+        long pSourceLeft );
+    long GetSourceLeft ( );
+    void PutSourceWidth (
+        long pSourceWidth );
+    long GetSourceWidth ( );
+    void PutSourceTop (
+        long pSourceTop );
+    long GetSourceTop ( );
+    void PutSourceHeight (
+        long pSourceHeight );
+    long GetSourceHeight ( );
+    void PutDestinationLeft (
+        long pDestinationLeft );
+    long GetDestinationLeft ( );
+    void PutDestinationWidth (
+        long pDestinationWidth );
+    long GetDestinationWidth ( );
+    void PutDestinationTop (
+        long pDestinationTop );
+    long GetDestinationTop ( );
+    void PutDestinationHeight (
+        long pDestinationHeight );
+    long GetDestinationHeight ( );
+    HRESULT SetSourcePosition (
+        long Left,
+        long Top,
+        long Width,
+        long Height );
+    HRESULT GetSourcePosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight );
+    HRESULT SetDefaultSourcePosition ( );
+    HRESULT SetDestinationPosition (
+        long Left,
+        long Top,
+        long Width,
+        long Height );
+    HRESULT GetDestinationPosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight );
+    HRESULT SetDefaultDestinationPosition ( );
+    HRESULT GetVideoSize (
+        long * pWidth,
+        long * pHeight );
+    HRESULT GetVideoPaletteEntries (
+        long StartIndex,
+        long Entries,
+        long * pRetrieved,
+        long * pPalette );
+    HRESULT GetCurrentImage (
+        long * pBufferSize,
+        long * pDIBImage );
+    HRESULT IsUsingDefaultSource ( );
+    HRESULT IsUsingDefaultDestination ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_AvgTimePerFrame (
+        double * pAvgTimePerFrame ) = 0;
+    virtual HRESULT __stdcall get_BitRate (
+        long * pBitRate ) = 0;
+    virtual HRESULT __stdcall get_BitErrorRate (
+        long * pBitErrorRate ) = 0;
+    virtual HRESULT __stdcall get_VideoWidth (
+        long * pVideoWidth ) = 0;
+    virtual HRESULT __stdcall get_VideoHeight (
+        long * pVideoHeight ) = 0;
+    virtual HRESULT __stdcall put_SourceLeft (
+        long pSourceLeft ) = 0;
+    virtual HRESULT __stdcall get_SourceLeft (
+        long * pSourceLeft ) = 0;
+    virtual HRESULT __stdcall put_SourceWidth (
+        long pSourceWidth ) = 0;
+    virtual HRESULT __stdcall get_SourceWidth (
+        long * pSourceWidth ) = 0;
+    virtual HRESULT __stdcall put_SourceTop (
+        long pSourceTop ) = 0;
+    virtual HRESULT __stdcall get_SourceTop (
+        long * pSourceTop ) = 0;
+    virtual HRESULT __stdcall put_SourceHeight (
+        long pSourceHeight ) = 0;
+    virtual HRESULT __stdcall get_SourceHeight (
+        long * pSourceHeight ) = 0;
+    virtual HRESULT __stdcall put_DestinationLeft (
+        long pDestinationLeft ) = 0;
+    virtual HRESULT __stdcall get_DestinationLeft (
+        long * pDestinationLeft ) = 0;
+    virtual HRESULT __stdcall put_DestinationWidth (
+        long pDestinationWidth ) = 0;
+    virtual HRESULT __stdcall get_DestinationWidth (
+        long * pDestinationWidth ) = 0;
+    virtual HRESULT __stdcall put_DestinationTop (
+        long pDestinationTop ) = 0;
+    virtual HRESULT __stdcall get_DestinationTop (
+        long * pDestinationTop ) = 0;
+    virtual HRESULT __stdcall put_DestinationHeight (
+        long pDestinationHeight ) = 0;
+    virtual HRESULT __stdcall get_DestinationHeight (
+        long * pDestinationHeight ) = 0;
+    virtual HRESULT __stdcall raw_SetSourcePosition (
+        long Left,
+        long Top,
+        long Width,
+        long Height ) = 0;
+    virtual HRESULT __stdcall raw_GetSourcePosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_SetDefaultSourcePosition ( ) = 0;
+    virtual HRESULT __stdcall raw_SetDestinationPosition (
+        long Left,
+        long Top,
+        long Width,
+        long Height ) = 0;
+    virtual HRESULT __stdcall raw_GetDestinationPosition (
+        long * pLeft,
+        long * pTop,
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_SetDefaultDestinationPosition ( ) = 0;
+    virtual HRESULT __stdcall raw_GetVideoSize (
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall raw_GetVideoPaletteEntries (
+        long StartIndex,
+        long Entries,
+        long * pRetrieved,
+        long * pPalette ) = 0;
+    virtual HRESULT __stdcall raw_GetCurrentImage (
+        long * pBufferSize,
+        long * pDIBImage ) = 0;
+    virtual HRESULT __stdcall raw_IsUsingDefaultSource ( ) = 0;
+    virtual HRESULT __stdcall raw_IsUsingDefaultDestination ( ) = 0;
+};
+
+struct __declspec(uuid("329bb360-f6ea-11d1-9038-00a0c9697298"))
+IBasicVideo2 : IBasicVideo
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT GetPreferredAspectRatio (
+        long * plAspectX,
+        long * plAspectY );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetPreferredAspectRatio (
+        long * plAspectX,
+        long * plAspectY ) = 0;
+};
+
+struct __declspec(uuid("56a868b8-0ad4-11ce-b03a-0020af0ba770"))
+IDeferredCommand : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Cancel ( );
+    HRESULT Confidence (
+        long * pConfidence );
+    HRESULT Postpone (
+        double newtime );
+    HRESULT GetHResult (
+        HRESULT * phrResult );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Cancel ( ) = 0;
+    virtual HRESULT __stdcall raw_Confidence (
+        long * pConfidence ) = 0;
+    virtual HRESULT __stdcall raw_Postpone (
+        double newtime ) = 0;
+    virtual HRESULT __stdcall raw_GetHResult (
+        HRESULT * phrResult ) = 0;
+};
+
+struct __declspec(uuid("56a868b7-0ad4-11ce-b03a-0020af0ba770"))
+IQueueCommand : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT InvokeAtStreamTime (
+        struct IDeferredCommand * * pCmd,
+        double time,
+        GUID * iid,
+        long dispidMethod,
+        short wFlags,
+        long cArgs,
+        VARIANT * pDispParams,
+        VARIANT * pvarResult,
+        short * puArgErr );
+    HRESULT InvokeAtPresentationTime (
+        struct IDeferredCommand * * pCmd,
+        double time,
+        GUID * iid,
+        long dispidMethod,
+        short wFlags,
+        long cArgs,
+        VARIANT * pDispParams,
+        VARIANT * pvarResult,
+        short * puArgErr );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_InvokeAtStreamTime (
+        struct IDeferredCommand * * pCmd,
+        double time,
+        GUID * iid,
+        long dispidMethod,
+        short wFlags,
+        long cArgs,
+        VARIANT * pDispParams,
+        VARIANT * pvarResult,
+        short * puArgErr ) = 0;
+    virtual HRESULT __stdcall raw_InvokeAtPresentationTime (
+        struct IDeferredCommand * * pCmd,
+        double time,
+        GUID * iid,
+        long dispidMethod,
+        short wFlags,
+        long cArgs,
+        VARIANT * pDispParams,
+        VARIANT * pvarResult,
+        short * puArgErr ) = 0;
+};
+
+struct __declspec(uuid("e436ebb3-524f-11ce-9f53-0020af0ba770"))
+FilgraphManager;
+    // [ default ] interface IMediaControl
+    // interface IMediaEvent
+    // interface IMediaPosition
+    // interface IBasicAudio
+    // interface IBasicVideo
+    // interface IVideoWindow
+
+struct __declspec(uuid("56a868ba-0ad4-11ce-b03a-0020af0ba770"))
+IFilterInfo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetVendorInfo))
+    _bstr_t VendorInfo;
+    __declspec(property(get=GetFilter))
+    IUnknownPtr Filter;
+    __declspec(property(get=GetPins))
+    IDispatchPtr Pins;
+    __declspec(property(get=GetIsFileSource))
+    long IsFileSource;
+    __declspec(property(get=GetFilename,put=PutFilename))
+    _bstr_t Filename;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT FindPin (
+        _bstr_t strPinID,
+        IDispatch * * ppUnk );
+    _bstr_t GetName ( );
+    _bstr_t GetVendorInfo ( );
+    IUnknownPtr GetFilter ( );
+    IDispatchPtr GetPins ( );
+    long GetIsFileSource ( );
+    _bstr_t GetFilename ( );
+    void PutFilename (
+        _bstr_t pstrFilename );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_FindPin (
+        BSTR strPinID,
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_Name (
+        BSTR * strName ) = 0;
+    virtual HRESULT __stdcall get_VendorInfo (
+        BSTR * strVendorInfo ) = 0;
+    virtual HRESULT __stdcall get_Filter (
+        IUnknown * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_Pins (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_IsFileSource (
+        long * pbIsSource ) = 0;
+    virtual HRESULT __stdcall get_Filename (
+        BSTR * pstrFilename ) = 0;
+    virtual HRESULT __stdcall put_Filename (
+        BSTR pstrFilename ) = 0;
+};
+
+struct __declspec(uuid("56a868bb-0ad4-11ce-b03a-0020af0ba770"))
+IRegFilterInfo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetName ( );
+    HRESULT Filter (
+        IDispatch * * ppUnk );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Name (
+        BSTR * strName ) = 0;
+    virtual HRESULT __stdcall raw_Filter (
+        IDispatch * * ppUnk ) = 0;
+};
+
+struct __declspec(uuid("56a868bc-0ad4-11ce-b03a-0020af0ba770"))
+IMediaTypeInfo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetType))
+    _bstr_t Type;
+    __declspec(property(get=GetSubtype))
+    _bstr_t Subtype;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetType ( );
+    _bstr_t GetSubtype ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Type (
+        BSTR * strType ) = 0;
+    virtual HRESULT __stdcall get_Subtype (
+        BSTR * strType ) = 0;
+};
+
+struct __declspec(uuid("56a868bd-0ad4-11ce-b03a-0020af0ba770"))
+IPinInfo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetPin))
+    IUnknownPtr Pin;
+    __declspec(property(get=GetConnectedTo))
+    IDispatchPtr ConnectedTo;
+    __declspec(property(get=GetConnectionMediaType))
+    IDispatchPtr ConnectionMediaType;
+    __declspec(property(get=GetFilterInfo))
+    IDispatchPtr FilterInfo;
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetDirection))
+    long Direction;
+    __declspec(property(get=GetPinID))
+    _bstr_t PinID;
+    __declspec(property(get=GetMediaTypes))
+    IDispatchPtr MediaTypes;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr GetPin ( );
+    IDispatchPtr GetConnectedTo ( );
+    IDispatchPtr GetConnectionMediaType ( );
+    IDispatchPtr GetFilterInfo ( );
+    _bstr_t GetName ( );
+    long GetDirection ( );
+    _bstr_t GetPinID ( );
+    IDispatchPtr GetMediaTypes ( );
+    HRESULT Connect (
+        IUnknown * pPin );
+    HRESULT ConnectDirect (
+        IUnknown * pPin );
+    HRESULT ConnectWithType (
+        IUnknown * pPin,
+        IDispatch * pMediaType );
+    HRESULT Disconnect ( );
+    HRESULT Render ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Pin (
+        IUnknown * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_ConnectedTo (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_ConnectionMediaType (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_FilterInfo (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_Name (
+        BSTR * ppUnk ) = 0;
+    virtual HRESULT __stdcall get_Direction (
+        long * ppDirection ) = 0;
+    virtual HRESULT __stdcall get_PinID (
+        BSTR * strPinID ) = 0;
+    virtual HRESULT __stdcall get_MediaTypes (
+        IDispatch * * ppUnk ) = 0;
+    virtual HRESULT __stdcall raw_Connect (
+        IUnknown * pPin ) = 0;
+    virtual HRESULT __stdcall raw_ConnectDirect (
+        IUnknown * pPin ) = 0;
+    virtual HRESULT __stdcall raw_ConnectWithType (
+        IUnknown * pPin,
+        IDispatch * pMediaType ) = 0;
+    virtual HRESULT __stdcall raw_Disconnect ( ) = 0;
+    virtual HRESULT __stdcall raw_Render ( ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "quartz.tli"
+
+} // namespace QuartzTypeLib
+
+#pragma pack(pop)

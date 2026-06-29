@@ -1,0 +1,78 @@
+// videocontrol.idl : IDL source for videocontrol.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (videocontrol.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+	
+
+	[
+		object,
+		uuid(7C33DB15-3DA6-4C52-B6E1-8F0D9FD73DCD),
+		dual,
+		helpstring("Idbjvideo Interface"),
+		pointer_default(unique)
+	]
+	interface Idbjvideo : IDispatch
+	{
+		[propput, id(DISPID_BORDERSTYLE)]
+		HRESULT BorderStyle([in]long style);
+		[propget, id(DISPID_BORDERSTYLE)]
+		HRESULT BorderStyle([out, retval]long* pstyle);
+		[propput, id(DISPID_BORDERWIDTH)]
+		HRESULT BorderWidth([in]long width);
+		[propget, id(DISPID_BORDERWIDTH)]
+		HRESULT BorderWidth([out, retval]long* width);
+		[propget, id(DISPID_HWND)]
+		HRESULT Window([out, retval]long* phwnd);
+		[propput, id(DISPID_MOUSEPOINTER)]
+		HRESULT MousePointer([in]long pointer);
+		[propget, id(DISPID_MOUSEPOINTER)]
+		HRESULT MousePointer([out, retval]long* ppointer);
+		[propputref, id(DISPID_MOUSEICON)]
+		HRESULT MouseIcon([in]IPictureDisp* pMouseIcon);
+		[propput, id(DISPID_MOUSEICON)]
+		HRESULT MouseIcon([in]IPictureDisp* pMouseIcon);
+		[propget, id(DISPID_MOUSEICON)]
+		HRESULT MouseIcon([out, retval]IPictureDisp** ppMouseIcon);
+		[propputref, id(DISPID_PICTURE)]
+		HRESULT Picture([in]IPictureDisp* pPicture);
+		[propput, id(DISPID_PICTURE)]
+		HRESULT Picture([in]IPictureDisp* pPicture);
+		[propget, id(DISPID_PICTURE)]
+		HRESULT Picture([out, retval]IPictureDisp** ppPicture);
+	};
+
+[
+	uuid(7C4D00BD-B7D6-4EFF-A98D-D7BC0D9B733C),
+	version(1.0),
+	helpstring("videocontrol 1.0 Type Library")
+]
+library VIDEOCONTROLLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(0A626935-4594-4DF2-9898-6BC739D6821D),
+		helpstring("_IdbjvideoEvents Interface")
+	]
+	dispinterface _IdbjvideoEvents
+	{
+		properties:
+		methods:
+	};
+
+	[
+		uuid(A3014D0A-95BE-4440-8D05-BEBC1117EBC6),
+		helpstring("dbjvideo Class")
+	]
+	coclass dbjvideo
+	{
+		[default] interface Idbjvideo;
+		[default, source] dispinterface _IdbjvideoEvents;
+	};
+};
