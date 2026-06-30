@@ -56,10 +56,10 @@ C4Context
     System_Ext(com, "Windows COM Runtime + Registry", "Class activation, type-library and category registration")
     System_Ext(directshow, "DirectShow Runtime (quartz.dll)", "Intended media filter graph for video rendering")
 
-    Rel(author, host, "Loads HTML page containing the control")
-    Rel(host, dbjvideo, "Activates & drives", "COM / OLE (IDispatch, IOleObject, IViewObject)")
-    Rel(dbjvideo, com, "Registers with / activated by", "DllRegisterServer, class factory")
-    Rel(dbjvideo, directshow, "Intended to drive (not yet wired)", "quartz type lib")
+    Rel(author, host, "Loads page")
+    Rel(host, dbjvideo, "Activates", "COM/OLE")
+    Rel(dbjvideo, com, "Registers with")
+    Rel(dbjvideo, directshow, "Drives (planned)")
     UpdateRelStyle(dbjvideo, directshow, $lineStyle="dashed")
 ```
 
@@ -82,10 +82,10 @@ C4Container
     }
 
     Rel(author, host, "Views page")
-    Rel(host, dll, "Activates & calls", "COM / OLE")
-    Rel(host, tlb, "Reads interface metadata")
-    Rel(dll, ps, "Uses for marshalling")
-    Rel(dll, directshow, "Intended media rendering (scaffold)", "quartz")
+    Rel(host, dll, "Activates", "COM/OLE")
+    Rel(host, tlb, "Reads metadata")
+    Rel(dll, ps, "Marshals via")
+    Rel(dll, directshow, "Renders (planned)")
     UpdateRelStyle(dll, directshow, $lineStyle="dashed")
 ```
 
@@ -110,14 +110,14 @@ C4Component
         Component(quartz, "quartz wrappers", "quartz.tlh / quartz.tli", "Generated DirectShow type-library import (unused)")
     }
 
-    Rel(host, exports, "CoCreateInstance", "COM")
-    Rel(exports, control, "Instantiates", "class factory")
+    Rel(host, exports, "Creates", "COM")
+    Rel(exports, control, "Instantiates")
     Rel(control, iface, "Implements")
-    Rel(control, category, "Declared in CATEGORY_MAP")
-    Rel(exports, reg, "Applies on DllRegisterServer")
-    Rel(vrenderer, quartz, "Includes (no calls yet)")
-    Rel(control, vrenderer, "Intended owner of render pipeline (not yet wired)")
-    Rel(vrenderer, directshow, "Intended filter graph (scaffold)", "quartz")
+    Rel(control, category, "Declares")
+    Rel(exports, reg, "Registers via")
+    Rel(vrenderer, quartz, "Includes")
+    Rel(control, vrenderer, "Owns (planned)")
+    Rel(vrenderer, directshow, "Renders (planned)")
     UpdateRelStyle(control, vrenderer, $lineStyle="dashed")
     UpdateRelStyle(vrenderer, directshow, $lineStyle="dashed")
 ```
